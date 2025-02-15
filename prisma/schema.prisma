@@ -1,0 +1,53 @@
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Tipos de Questão (input, temperamento, linguagem, etc)
+model TipoQuestao {
+  id          String    @id @default(uuid())
+  nome        String    @unique  // "input", "temperamento", "linguagem"
+  descricao   String?
+  questoes    Questao[]
+}
+
+// Tipos de Alternativa (categorias de resposta)
+model TipoAlternativa {
+  id          String        @id @default(uuid())
+  nome        String        @unique  // "palavra_afirmacao", "toque_fisico"
+  descricao   String?
+  grupo       String?       // Agrupamento opcional (ex: "linguagem_amor")
+  alternativas Alternativa[]
+}
+
+// Questões do questionário
+model Questao {
+  id          String        @id @default(uuid())
+  tipoQuestao TipoQuestao   @relation(fields: [tipoQuestaoId], references: [id])
+  tipoQuestaoId String
+  pergunta    String        @db.Text
+  complemento String?       @db.Text
+  alternativas Alternativa[] 
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@index([tipoQuestaoId])
+}
+
+// Alternativas para cada questão
+model Alternativa {
+  id                String          @id @default(uuid())
+  questao           Questao         @relation(fields: [questaoId], references: [id])
+  questaoId         String
+  texto             String          @db.Text
+  tipoAlternativa   TipoAlternativa @relation(fields: [tipoAlternativaId], references: [id])
+  tipoAlternativaId String
+
+  @@index([questaoId])
+  @@index([tipoAlternativaId])
+}
