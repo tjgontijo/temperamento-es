@@ -26,7 +26,7 @@ export function Header() {
           <div className="w-20 h-20 overflow-hidden">
             <Image 
               src="/logo.png" 
-              alt="Decifrando Corações" 
+              alt="Descifrando Corazones" 
               width={96} 
               height={96} 
               className="object-cover w-full h-full"
@@ -41,19 +41,19 @@ export function Header() {
             href="#como-funciona" 
             className="text-white hover:text-purple-100 transition-colors scroll-smooth"
           >
-            Como Funciona
+            Cómo funciona
           </Link>
           <Link 
             href="#beneficios" 
             className="text-white hover:text-purple-100 transition-colors scroll-smooth"
           >
-            Benefícios
+            Beneficios
           </Link>
           <Link 
             href="#depoimentos" 
             className="text-white hover:text-purple-100 transition-colors scroll-smooth"
           >
-            Depoimentos
+            Testimonios
           </Link>
         </nav>
 
@@ -63,7 +63,7 @@ export function Header() {
             className="hidden md:flex text-purple-600 bg-white hover:bg-purple-100 border-none shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out"
             onClick={() => window.location.href = '/questionario'}
           >
-            Começar Minha Análise
+            Iniciar mi análisis
           </Button>
 
           {/* Menu Mobile */}
@@ -121,21 +121,21 @@ export function Header() {
                   className="text-white hover:text-purple-100 transition-colors"
                   onClick={closeMobileMenu}
                 >
-                  Como Funciona
+                  Cómo funciona
                 </Link>
                 <Link 
                   href="#beneficios" 
                   className="text-white hover:text-purple-100 transition-colors"
                   onClick={closeMobileMenu}
                 >
-                  Benefícios
+                  Beneficios
                 </Link>
                 <Link 
                   href="#depoimentos" 
                   className="text-white hover:text-purple-100 transition-colors"
                   onClick={closeMobileMenu}
                 >
-                  Depoimentos
+                  Testimonios
                 </Link>
                 <Button 
                   className="w-3/4 bg-white text-purple-600 hover:bg-purple-50 whitespace-normal text-center hover:scale-105 transition-transform duration-300"
@@ -144,7 +144,7 @@ export function Header() {
                     window.location.href = '/questionario';
                   }}
                 >
-                  Começar Minha Análise
+                  Iniciar mi análisis
                 </Button>
               </nav>
             </div>
