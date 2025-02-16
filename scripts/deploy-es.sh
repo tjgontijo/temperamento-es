@@ -5,7 +5,7 @@ IFS=$'\n\t'
 
 # Variáveis de configuração
 APP_NAME="decifrandocoracoes"
-PROJECT_DIR="/var/www/decifrandocoracoes"
+PROJECT_DIR="/var/www/decifrandocoracoes-es"
 
 echo "==> Entrando no diretório do projeto: $PROJECT_DIR"
 cd "$PROJECT_DIR" || { echo "Erro: diretório do projeto não encontrado!"; exit 1; }
